@@ -6,3 +6,6 @@ dataset/
 **/*tmp*/
 .env
 drawing-with-llms/
+lora/
+outputs/
+
