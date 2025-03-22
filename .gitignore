@@ -8,4 +8,4 @@ dataset/
 drawing-with-llms/
 lora/
 outputs/
-
+*.csv
