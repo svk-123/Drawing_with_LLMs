@@ -9,3 +9,5 @@ drawing-with-llms/
 lora/
 outputs/
 *.csv
+star-vector/**
+*.txt
