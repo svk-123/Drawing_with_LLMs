@@ -12,3 +12,6 @@ io_files/**
 *.csv
 star-vector/**
 *.txt
+*.png
+*.jpg
+*.jpeg
