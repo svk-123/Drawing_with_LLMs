@@ -20,7 +20,7 @@ class SVGMetricEvaluator:
         print(f"Using device: {self.device}")
         
         # Load the model and processor
-        self.model = AutoModel.from_pretrained(model_name).to(self.device)
+        self.model = AutoModel.from_pretrained(model_name)
         self.processor = AutoProcessor.from_pretrained(model_name)
     
     def svg_metric(self, prompt, svg):
@@ -31,7 +31,7 @@ class SVGMetricEvaluator:
             # Open and process the image
             image = Image.open('./tmp/temp.png').convert("RGB")
             texts = ["SVG illustration of " + prompt]
-            inputs = self.processor(text=texts, images=image, padding="max_length", return_tensors="pt").to(self.device)
+            inputs = self.processor(text=texts, images=image, padding="max_length", return_tensors="pt")
             
             # Inference without gradient tracking
             with torch.no_grad():

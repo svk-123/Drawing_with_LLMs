@@ -4,10 +4,14 @@ dataset/
 .ipynb_*
 **/*unsloth*/
 **/*tmp*/
+**/*__pycache__*/
+__pycache__/
+*.pyc
 .env
 drawing-with-llms/
 lora/
 outputs/
+mlruns/
 io_files/**
 *.csv
 star-vector/**
