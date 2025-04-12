@@ -23,25 +23,28 @@ class SVGMetricEvaluator:
     
     def svg_metric(self, prompt: str, svg: str) -> float:
         try:
-            #png_bytes = cairosvg.svg2png(bytestring=svg.encode('utf-8'))
-            #image = Image.open(io.BytesIO(png_bytes)).convert("RGB")
 
-            cairosvg.svg2png(svg, write_to="temp.png")
-            image = Image.open('temp.png').convert("RGB")
+            #cairosvg.svg2png(svg, write_to="temp.png")
+            #image = Image.open('temp.png').convert("RGB")
 
-            inputs = self.processor(text=["SVG illustration of " + prompt], images=image, return_tensors="pt").to(self.device)
+            png_bytes = cairosvg.svg2png(bytestring=svg.encode('utf-8'))
+            image = Image.open(io.BytesIO(png_bytes)).convert("RGB")
+
+            texts = ["SVG illustration of " + prompt]
+            inputs = self.processor(text=texts, images=image, padding="max_length", return_tensors="pt").to(self.device)
+            
+            # Inference without gradient tracking
             with torch.no_grad():
                 outputs = self.model(**inputs)
+            
             logits_per_image = outputs.logits_per_image
-            probs = torch.sigmoid(logits_per_image)
+            probs = torch.sigmoid(logits_per_image)            
+            
             return probs[0][0].item()
+        
         except Exception as e:
             print(f"Error during evaluation: {e}")
             raise e
-
-    def close_model(self):
-        del self.model
-        gc.collect()
 
 evaluator = None
 

@@ -4,12 +4,12 @@ from PIL import Image
 import cairosvg
 import os
 import gc
+import io
 
 class SVGMetricEvaluator:
     def __init__(self, model_name="google/siglip-so400m-patch14-384", device=None):
         # Initialize the device and model
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu") if device is None else device
-        print(f"Using device: {self.device}")
         
         # Load the model and processor
         self.model = AutoModel.from_pretrained(model_name).to(self.device)
@@ -18,10 +18,12 @@ class SVGMetricEvaluator:
     def svg_metric(self, prompt, svg):
         try:
             # Convert SVG to PNG
-            cairosvg.svg2png(svg, write_to="temp.png")
-            
-            # Open and process the image
-            image = Image.open('temp.png').convert("RGB")
+            #cairosvg.svg2png(svg, write_to="temp.png")
+            #image = Image.open('temp.png').convert("RGB")
+
+            png_bytes = cairosvg.svg2png(bytestring=svg.encode('utf-8'))
+            image = Image.open(io.BytesIO(png_bytes)).convert("RGB")
+
             texts = ["SVG illustration of " + prompt]
             inputs = self.processor(text=texts, images=image, padding="max_length", return_tensors="pt").to(self.device)
             
@@ -31,13 +33,7 @@ class SVGMetricEvaluator:
             
             logits_per_image = outputs.logits_per_image
             probs = torch.sigmoid(logits_per_image)
-
-            # Check if the model and inputs are on the GPU
-            print(f"Model is on device: {self.model.device}")
-            print(f"Inputs are on device: {inputs['input_ids'].device}")
             
-            # Clean up temporary PNG file
-            os.remove('temp.png')
             
             return probs[0][0].item()
         
