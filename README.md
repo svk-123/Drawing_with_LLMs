@@ -23,11 +23,6 @@
    - Perform scoring  
    - Stop scoring server  
 
-> ⚠️ **Note:**  
-> Due to limited VRAM (16 GB), running multiple servers (e.g., inference and scoring) **simultaneously** is not feasible.  
-> The pipeline is designed to run these processes **sequentially** to manage memory efficiently.
-
----
 
 ## 🧩 To Be Done
 	** compare models from 1B-7B with various finetunes, parameters, etc**
@@ -35,4 +30,8 @@
 	** Write a clear report for documentation**
 	** release improved models & train-validation dataset to kaggle along with notebooks for the benifit of the community**
 
+> ⚠️ **Note:**  
+> Due to limited VRAM (16 GB), running multiple servers (e.g., inference and scoring) **simultaneously** is not feasible.  
+> The pipeline is designed to run these processes **sequentially** to manage memory efficiently.
 
+---
