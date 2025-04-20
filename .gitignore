@@ -12,6 +12,7 @@ drawing-with-llms/
 lora/
 outputs/
 mlruns/
+reports/
 io_files/**
 *.csv
 star-vector/**

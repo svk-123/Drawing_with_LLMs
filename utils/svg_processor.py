@@ -16,8 +16,9 @@ import kagglehub
 from lxml import etree
 import torch
 import gc
+import svg_constraints 
 
-svg_constraints = kagglehub.package_import('metric/svg-constraints')
+#svg_constraints = kagglehub.package_import('metric/svg-constraints')
 
 class SVGSanitizer:
     def __init__(self, constraints, default_svg):
