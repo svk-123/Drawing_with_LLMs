@@ -14,9 +14,10 @@ outputs/
 mlruns/
 reports/
 io_files/**
-*.csv
+#*.csv
 star-vector/**
 *.txt
 *.png
 *.jpg
 *.jpeg
+.*

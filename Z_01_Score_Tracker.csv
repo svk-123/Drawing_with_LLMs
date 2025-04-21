@@ -1,0 +1,9 @@
+Model_Base,Precision,FFT,PEFT,Rank,Train-set-sample,Train_prompt,max_length_training,Seed_training,T=,top_p=0.95,Max_length_prediction,pred_prompt,SL_score_test_sample-76
+Llama-3.2-1B-Instruct,FP16,No,No,NA,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,0.0012
+Llama-3.2-1B-Instruct,FP16,No,LoRA,64,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
+Llama-3.2-1B-Instruct,FP16,No,LoRA,128,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
+Llama-3.2-1B-Instruct,FP16,No,LoRA,256,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,0.457
+Llama-3.2-3B-Instruct,FP16,No,No,NA,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
+Llama-3.2-3B-Instruct,FP16,No,LoRA,64,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
+Llama-3.2-3B-Instruct,FP16,No,LoRA,128,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
+Llama-3.2-3B-Instruct,FP16,No,LoRA,256,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,
