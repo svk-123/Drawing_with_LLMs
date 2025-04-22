@@ -8,3 +8,7 @@ Llama-3.2-3B-Instruct,FP16,No,LoRA,64,2k,Alpaca simple,2048,123,0.7,0.95,1024,Al
 Llama-3.2-3B-Instruct,FP16,No,LoRA,128,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,,,
 Llama-3.2-3B-Instruct,FP16,No,LoRA,256,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,0.615,,
 Qwen25_7B_Instruct,FP16,No,LoRA,256,2k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,,Lora-4bit & merged to fp16,
+Qwen25_7B_Instruct,FP16,No,LoRA,256,1k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,,FP16,
+Qwen25_7B_Instruct,FP16,No,LoRA,256,1k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,0.605,AWQ,
+Qwen25_14B_Instruct,FP16,No,LoRA,256,1k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,,AWQ,
+Qwen25_32B_Instruct,FP16,No,LoRA,256,1k,Alpaca simple,2048,123,0.7,0.95,1024,Alpaca simple,,AWQ,
