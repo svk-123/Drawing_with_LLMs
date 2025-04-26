@@ -262,14 +262,18 @@ class AestheticEvaluator:
     
     def get_score(self, svg: str) -> float:
         rng = np.random.RandomState(123)
-        group_seed = rng.randint(0, np.iinfo(np.int32).max)
+        try:
+            group_seed = rng.randint(0, np.iinfo(np.int32).max)
+            
+            image_processor = ImageProcessor(image=svg_to_png(svg), seed=group_seed).apply()
+            image = image_processor.image.copy()
+            
+            aesthetic_score = self.score(image)
+            return aesthetic_score
+        except Exception as e:
+            print("Errror in scoring: return 0.00")
+            return 0.0
         
-        image_processor = ImageProcessor(image=svg_to_png(svg), seed=group_seed).apply()
-        image = image_processor.image.copy()
-        
-        aesthetic_score = self.score(image)
-        return aesthetic_score
-
 # make global
 if __name__ == "__main__":
     aesthetic_evaluator = AestheticEvaluator()

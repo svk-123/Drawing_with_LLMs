@@ -1,19 +1,20 @@
 ## 🔧 Skills & Tools Applied
 
 1. **Foundation Model Inference** using `transformers` and `Unsloth`  
-2. **Synthetic Data Generation** via OpenAI APIs  
-3. **Parameter-Efficient Fine-Tuning (PEFT)** using LoRA with `Unsloth`  
-4. **Fine-Tuned Model Inference** with `transformers` and `Unsloth`  
-5. **Response Cleaning** using custom functions and criteria  
-6. **Response Scoring** with `SigLIP` model  
-7. **Design of Experiments (DOE)** using `MLflow` by varying model parameters such as:
+2. **Synthetic Data Generation** via OpenAI APIs
+3. **Full Fine-Tuning (FFT)** with `Unsloth` 
+4. **Parameter-Efficient Fine-Tuning (PEFT)** using LoRA with `Unsloth`  
+5. **Fine-Tuned Model Inference** with `transformers` and `Unsloth`  
+6. **Response Cleaning** using custom functions and criteria  
+7. **Response Scoring** with `SigLIP` model  
+8. **Design of Experiments (DOE)** using `MLflow` by varying model parameters such as:
    - `temperature`
    - `top_p`
    - `top_k`  
-8. **Model Serving**:
+9. **Model Serving**:
    - Serving LLM via `vLLM` for high-throughput inference  
    - Serving `SigLIP` scoring model via `FastAPI`  
-9. **End-to-End Inference-Scoring Workflow**:
+10. **End-to-End Inference-Scoring Workflow**:
    - Load input data  
    - Start inference server  
    - Perform predictions  
