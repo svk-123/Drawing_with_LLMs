@@ -13,6 +13,7 @@ lora/
 outputs/
 mlruns/
 reports/
+batches_async/
 io_files/**
 #*.csv
 star-vector/**
