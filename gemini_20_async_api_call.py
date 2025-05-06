@@ -96,8 +96,8 @@ async def main_batch_processor():
     Main async function to load data, iterate through batches,
     process each batch asynchronously, and save results.
     """
-    df = pd.read_csv('./drawing-with-llms/gemini_20_description_master_48k.csv')
-    df = df.iloc[20000:30000] # Use a smaller sample for testing
+    df = pd.read_csv('./drawing-with-llms/description_master_gemini_20_48k.csv')
+    df = df.iloc[20000:] # Use a smaller sample for testing
 
     batch_size = 100
     total_rows = len(df)
