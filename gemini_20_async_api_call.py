@@ -96,7 +96,11 @@ async def main_batch_processor():
     Main async function to load data, iterate through batches,
     process each batch asynchronously, and save results.
     """
-    df = pd.read_csv('./drawing-with-llms/description_master_gpt_deepseek_10k_v1.csv')
+    df2= pd.read_csv('./drawing-with-llms/train_filtered_1_batch_gpt4.csv')
+    df = pd.read_csv('tmp_iter_2.csv')
+    df = df[ df['cleaned_svg_sl_score'] < 0.5]
+    df = df[~df['description'].isin(df2['description'])]
+    print(df.shape)
     #df = df.iloc[20000:] # Use a smaller sample for testing
 
     batch_size = 100
