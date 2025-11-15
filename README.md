@@ -32,7 +32,7 @@
 	** release improved models & train-validation dataset to kaggle along with notebooks for the benifit of the community**
 
 > ⚠️ **Note:**  
-> Due to limited VRAM (16 GB), running multiple servers (e.g., inference and scoring) **simultaneously** is not feasible.  
+> Due to limited VRAM , running multiple servers (e.g., inference and scoring) **simultaneously** is not feasible.  
 > The pipeline is designed to run these processes **sequentially** to manage memory efficiently.
 
 ---
