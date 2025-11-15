@@ -31,8 +31,6 @@
 	** Write a clear report for documentation**
 	** release improved models & train-validation dataset to kaggle along with notebooks for the benifit of the community**
 
-> ⚠️ **Note:**  
-> Due to limited VRAM , running multiple servers (e.g., inference and scoring) **simultaneously** is not feasible.  
-> The pipeline is designed to run these processes **sequentially** to manage memory efficiently.
+The synthetically generated dataset used for this competition is available on Hugging Face: https://huggingface.co/datasets/vinoku89/svg-code-generation
 
 ---
